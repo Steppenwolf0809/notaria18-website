@@ -57,10 +57,6 @@ export function Header() {
           Servicios
         </button>
 
-        {/* Divorcio: lleva al listado de servicios y desplaza al elemento con id="divorcio" */}
-        <button type="button" onClick={goToDivorcio} className="text-gray-700 hover:text-brand-primary font-medium">
-          Divorcio
-        </button>
 
         <button type="button" onClick={() => navigateToSection('tarifas', '/')} className="text-gray-700 hover:text-brand-primary font-medium">
           Tarifas
@@ -85,7 +81,9 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <div className="flex items-center gap-3">
-            <img src="/logo-notaria18.jpg" alt="Logo Notaría 18" className="h-12 w-auto rounded bg-white" />
+            <Link to="/" onClick={closeMenu}>
+              <img src="/logo-notaria18.jpg" alt="Logo Notaría 18" className="h-12 w-auto rounded bg-white" />
+            </Link>
             <div className="hidden sm:block">
               <span className="text-lg font-semibold text-brand-primary leading-tight">{SITE.name}</span>
               <div className="text-xs text-gray-500">{SITE.notary}</div>

@@ -7,7 +7,7 @@ export const SITE: SiteInfo = {
   mobile: "099-695-1682",
   email: "notaria18uio@gmail.com",
   address: "Calle Azuay E2-231 entre Av. Amazonas y Av. Azuay, Quito, Ecuador",
-  mapEmbedUrl: "https://www.google.com/maps?q=Calle+Azuay+E2-231,+Quito,+Ecuador&hl=es&z=17&output=embed",
+  mapEmbedUrl: "https://www.google.com/maps?q=-0.1841813896952939, -78.48810771779114&hl=es&z=17&output=embed",
   externalLinks: {
     judiciaryCouncil: "https://www.funcionjudicial.gob.ec/",
     propertyRegistry: "https://www.registrodelapropiedadquito.gob.ec/"
