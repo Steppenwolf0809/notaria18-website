@@ -1,0 +1,28 @@
+/* Global enhancements */
+html {
+  scroll-behavior: smooth; /* Smooth scroll for internal anchors */
+}
+
+:root {
+  color-scheme: light;
+}
+
+::selection {
+  background: #2a9eb3;
+  color: #ffffff;
+}
+
+/* Accessible focus outline */
+:focus-visible {
+  outline: 2px solid #1e7a8c;
+  outline-offset: 2px;
+}
+
+/* Custom brand colors for Tailwind */
+:root {
+  --color-brand-primary: #1e7a8c;
+  --color-brand-secondary: #2a9eb3;
+  --color-brand-grayLight: #f8f9fa;
+  --color-brand-text: #333333;
+  --color-brand-white: #ffffff;
+}

@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/jpeg" href="images/logo-notaria18.jpg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Servicios Notariales - Notaría 18 Quito</title>
+    <meta name="description" content="Servicios notariales profesionales en Quito: compraventa, divorcios, sociedades. Dra. Glenda Zapata Silva." />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                primary: '#1e7a8c',
+                secondary: '#2a9eb3',
+                grayLight: '#f8f9fa',
+                text: '#333333',
+                white: '#ffffff',
+              },
+              blue: {
+                700: '#1e7a8c',
+                800: '#15606f',
+                900: '#0f4a56',
+              },
+            },
+            fontFamily: {
+              sans: [
+                'Inter',
+                'ui-sans-serif',
+                'system-ui',
+                'Segoe UI',
+                'Roboto',
+                'Helvetica Neue',
+                'Arial',
+                'Noto Sans',
+                'Apple Color Emoji',
+                'Segoe UI Emoji',
+                'Segoe UI Symbol',
+              ],
+            },
+          },
+        },
+      }
+    </script>
+
+    <!-- Fuente Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body class="font-sans text-brand-text bg-white">
+    <div id="root">
+      <!-- Header -->
+      <header class="bg-white/90 backdrop-blur shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex justify-between items-center h-20">
+            <div class="flex items-center gap-3">
+              <img src="images/logo-notaria18.jpg" alt="Logo Notaría 18" class="h-12 w-auto rounded bg-white" />
+              <div class="hidden sm:block">
+                <span class="text-lg font-semibold text-brand-primary leading-tight">Notaría 18</span>
+                <div class="text-xs text-gray-500">Dra. Glenda Zapata Silva</div>
+              </div>
+            </div>
+
+            <div class="hidden md:block">
+              <nav class="ml-0 md:ml-10 flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-8">
+                <a href="index.html" class="text-gray-700 hover:text-brand-primary font-medium">Inicio</a>
+                <a href="index.html#about" class="text-gray-700 hover:text-brand-primary font-medium">La Notaría</a>
+                <a href="servicios.html" class="text-gray-700 hover:text-brand-primary font-medium">Servicios</a>
+                <a href="divorcio.html" class="text-gray-700 hover:text-brand-primary font-medium">Divorcio</a>
+                <a href="index.html#tarifas" class="text-gray-700 hover:text-brand-primary font-medium">Tarifas</a>
+                <a href="index.html#contact" class="text-gray-700 hover:text-brand-primary font-medium">Contacto</a>
+                <a href="notaria-virtual.html" class="bg-brand-primary text-white px-4 py-2 rounded-md hover:opacity-90 transition duration-300">Notaría Virtual</a>
+              </nav>
+            </div>
+
+            <div class="md:hidden">
+              <button id="menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-brand-primary focus:outline-none" aria-label="Abrir menú">
+                <i data-lucide="menu" class="h-6 w-6"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div id="mobile-menu" class="md:hidden bg-white shadow-lg hidden">
+          <div class="px-4 py-4">
+            <nav class="ml-0 md:ml-10 flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-8">
+              <a href="index.html" class="text-gray-700 hover:text-brand-primary font-medium">Inicio</a>
+              <a href="index.html#about" class="text-gray-700 hover:text-brand-primary font-medium">La Notaría</a>
+              <a href="servicios.html" class="text-gray-700 hover:text-brand-primary font-medium">Servicios</a>
+              <a href="divorcio.html" class="text-gray-700 hover:text-brand-primary font-medium">Divorcio</a>
+              <a href="index.html#tarifas" class="text-gray-700 hover:text-brand-primary font-medium">Tarifas</a>
+              <a href="index.html#contact" class="text-gray-700 hover:text-brand-primary font-medium">Contacto</a>
+              <a href="notaria-virtual.html" class="bg-brand-primary text-white px-4 py-2 rounded-md hover:opacity-90 transition duration-300">Notaría Virtual</a>
+            </nav>
+          </div>
+        </div>
+      </header>
+
+      <main class="w-full min-h-screen bg-white" id="top">
+        <!-- Hero Section -->
+        <section class="bg-gradient-to-b from-brand-grayLight to-white py-14">
+          <div class="max-w-7xl mx-auto px-4">
+            <a href="index.html" class="inline-block mb-4 text-brand-primary hover:underline" aria-label="Volver al inicio">
+              ← Volver al Inicio
+            </a>
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-900">Servicios</h1>
+            <p class="text-gray-700 mt-2">Conozca todos nuestros servicios notariales.</p>
+          </div>
+        </section>
+
+        <!-- Services List -->
+        <section class="py-16 bg-gray-50">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" role="list" aria-label="Lista de servicios">
+              <a href="servicios/compra-venta.html" role="listitem" aria-label="Abrir página del servicio Compra Venta" class="group block bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition duration-300 flex flex-col focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary">
+                <div class="flex items-center justify-center mb-4">
+                  <span class="text-4xl" aria-hidden="true">🏠</span>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 text-center mb-3">Compra Venta</h3>
+                <p class="text-gray-600 text-center mb-4 flex-grow">Asesoramiento inmobiliario y formalización de contratos de compraventa.</p>
+                <div class="text-center mt-2">
+                  <span class="inline-block text-brand-primary font-medium group-hover:underline transition">Leer Más →</span>
+                </div>
+              </a>
+
+              <a href="divorcio.html" id="divorcio" role="listitem" aria-label="Abrir página del servicio Divorcio por Mutuo Acuerdo" class="group block bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition duration-300 flex flex-col focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary">
+                <div class="flex items-center justify-center mb-4">
+                  <span class="text-4xl" aria-hidden="true">💔</span>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 text-center mb-3">Divorcio por Mutuo Acuerdo</h3>
+                <p class="text-gray-600 text-center mb-4 flex-grow">Divorcios consensuales con acompañamiento integral.</p>
+                <div class="text-center mt-2">
+                  <span class="inline-block text-brand-primary font-medium group-hover:underline transition">Leer Más →</span>
+                </div>
+              </a>
+
+              <a href="servicios/disolucion-sociedad-conyugal.html" role="listitem" aria-label="Abrir página del servicio Disolución Sociedad Conyugal" class="group block bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition duration-300 flex flex-col focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary">
+                <div class="flex items-center justify-center mb-4">
+                  <span class="text-4xl" aria-hidden="true">👥</span>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 text-center mb-3">Disolución Sociedad Conyugal</h3>
+                <p class="text-gray-600 text-center mb-4 flex-grow">Trámites matrimoniales para la disolución de la sociedad conyugal.</p>
+                <div class="text-center mt-2">
+                  <span class="inline-block text-brand-primary font-medium group-hover:underline transition">Leer Más →</span>
+                </div>
+              </a>
+
+              <a href="servicios/extincion-patrimonio-familiar.html" role="listitem" aria-label="Abrir página del servicio Extinción Patrimonio Familiar" class="group block bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition duration-300 flex flex-col focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary">
+                <div class="flex items-center justify-center mb-4">
+                  <span class="text-4xl" aria-hidden="true">🏛️</span>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 text-center mb-3">Extinción Patrimonio Familiar</h3>
+                <p class="text-gray-600 text-center mb-4 flex-grow">Gestión patrimonial para la extinción del patrimonio familiar.</p>
+                <div class="text-center mt-2">
+                  <span class="inline-block text-brand-primary font-medium group-hover:underline transition">Leer Más →</span>
+                </div>
+              </a>
+
+              <a href="servicios/posesion-efectiva.html" role="listitem" aria-label="Abrir página del servicio Posesión Efectiva" class="group block bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition duration-300 flex flex-col focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary">
+                <div class="flex items-center justify-center mb-4">
+                  <span class="text-4xl" aria-hidden="true">📋</span>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 text-center mb-3">Posesión Efectiva</h3>
+                <p class="text-gray-600 text-center mb-4 flex-grow">Regularización de bienes hereditarios y posesión efectiva.</p>
+                <div class="text-center mt-2">
+                  <span class="inline-block text-brand-primary font-medium group-hover:underline transition">Leer Más →</span>
+                </div>
+              </a>
+
+              <a href="servicios/donacion.html" role="listitem" aria-label="Abrir página del servicio Donación" class="group block bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition duration-300 flex flex-col focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary">
+                <div class="flex items-center justify-center mb-4">
+                  <span class="text-4xl" aria-hidden="true">🎁</span>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 text-center mb-3">Donación</h3>
+                <p class="text-gray-600 text-center mb-4 flex-grow">Transferencia de bienes por donación con seguridad jurídica.</p>
+                <div class="text-center mt-2">
+                  <span class="inline-block text-brand-primary font-medium group-hover:underline transition">Leer Más →</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Footer -->
+      <footer class="bg-brand-primary text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div class="grid md:grid-cols-4 gap-8">
+            <div>
+              <img src="images/logo-notaria18.jpg" alt="Logo Notaría 18" class="h-16 w-auto bg-white p-2 rounded" />
+              <p class="mt-4 text-sm text-white/80">Notaría 18 - Dra. Glenda Zapata Silva</p>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold mb-4">Navegación</h3>
+              <ul class="space-y-2">
+                <li><a href="index.html" class="text-white/80 hover:text-white transition duration-300">Inicio</a></li>
+                <li><a href="index.html#about" class="text-white/80 hover:text-white transition duration-300">La Notaría</a></li>
+                <li><a href="servicios.html" class="text-white/80 hover:text-white transition duration-300">Servicios</a></li>
+                <li><a href="index.html#tarifas" class="text-white/80 hover:text-white transition duration-300">Tarifas</a></li>
+                <li><a href="index.html#contact" class="text-white/80 hover:text-white transition duration-300">Contacto</a></li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold mb-4">Contacto</h3>
+              <ul class="space-y-2">
+                <li><a href="tel:022247787" class="text-white/80 hover:text-white transition duration-300">(02) 224-7787</a> / <a href="tel:0996951682" class="text-white/80 hover:text-white transition duration-300">099-695-1682</a></li>
+                <li><a href="mailto:notaria18uio@gmail.com" class="text-white/80 hover:text-white transition duration-300">notaria18uio@gmail.com</a></li>
+                <li><a href="https://maps.google.com/?q=Calle+Azuay+E2-231,+Quito,+Ecuador" target="_blank" rel="noopener noreferrer" class="text-white/80 hover:text-white transition duration-300">Calle Azuay E2-231 entre Av. Amazonas y Av. Azuay, Quito, Ecuador</a></li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold mb-4">Horarios de Atención</h3>
+              <ul class="space-y-2 text-white/80">
+                <li>Lunes a Viernes: 08:00 - 17:00</li>
+                <li>Sábado: 09:00 - 12:00</li>
+                <li>Domingo y feriados: Cerrado</li>
+              </ul>
+            </div>
+          </div>
+          <div class="border-t border-white/20 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+            <p class="text-white/80 text-sm">© 2025 Notaría 18. Todos los derechos reservados.</p>
+            <div class="mt-4 md:mt-0">
+              <a href="terminos.html" class="text-white/80 hover:text-white transition duration-300 mx-2">Términos y Condiciones</a>
+              <a href="privacidad.html" class="text-white/80 hover:text-white transition duration-300 mx-2">Política de Privacidad</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <!-- WhatsApp Button -->
+      <div class="fixed bottom-6 md:bottom-8 right-6 md:right-8 z-50 pb-[env(safe-area-inset-bottom)] opacity-0 translate-y-2 transition-all duration-300 motion-reduce:transition-none" id="whatsapp-button">
+        <div class="relative group pointer-events-auto">
+          <div class="hidden md:flex items-center absolute right-[72px] top-1/2 -translate-y-1/2 bg-black/90 text-white text-sm rounded-md px-3 py-1.5 opacity-0 group-hover:opacity-100 transition-all duration-200 whitespace-nowrap shadow-md">
+            Escríbenos
+            <span class="absolute left-[-6px] top-1/2 -translate-y-1/2 w-3 h-3 rotate-45 bg-black/90"></span>
+          </div>
+          <a href="https://wa.me/593996591682?text=Hola,%20necesito%20informaci%C3%B3n%20sobre%20servicios%20notariales" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp" class="flex items-center justify-center w-16 h-16 rounded-full shadow-lg transition-all duration-200 motion-reduce:transition-none motion-reduce:transform-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-emerald-500 hover:shadow-xl md:hover:scale-105 md:hover:ring-4 md:hover:ring-emerald-400/30" style="background: linear-gradient(180deg, #25D366 0%, #1ebe5d 100%);">
+            <svg aria-hidden="true" width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-white">
+              <path d="M27.6 4.4C24.7 1.5 20.7 0 16.5 0 8.4 0 1.9 6.5 1.9 14.6c0 2.6.7 5.1 2 7.3L2 32l10.4-1.8c2.1 1.1 4.5 1.7 7 1.7 8.1 0 14.6-6.5 14.6-14.6 0-4.2-1.6-8.1-4.5-10.9ZM19.4 28.7c-2.2 0-4.3-.6-6.1-1.7l-.4-.2-6.2 1.1 1.2-6.1-.3-.4c-1.2-1.9-1.8-4-1.8-6.2 0-6.5 5.3-11.8 11.8-11.8 3.2 0 6.2 1.2 8.4 3.5 2.2 2.2 3.5 5.2 3.5 8.4 0 6.5-5.3 11.8-11.8 11.8Zm6.8-8.9c-.4-.2-2.3-1.1-2.6-1.2-.4-.2-.7-.2-1 .2-.3.4-1.1 1.2-1.3 1.4-.2.2-.5.2-.9 0s-1.6-.6-3.1-1.9c-1.1-1-1.8-2.3-2-2.7-.2-.4 0-.6.1-.8.2-.2.4-.5.6-.7.2-.2.2-.4.3-.6 0-.2 0-.5 0-.7 0-.2-.9-2.3-1.2-3.2-.3-.8-.6-.7-.8-.7h-.7c-.2 0-.7.1-1.1.5-.4.4-1.5 1.5-1.5 3.6s1.5 4.1 1.7 4.4c.2.3 2.9 4.5 7 6.3.9.4 1.7.6 2.2.8.9.3 1.7.3 2.3.2.7-.1 2.3-.9 2.6-1.8.3-.9.3-1.6.2-1.8-.2-.1-.5-.3-.9-.5Z" fill="currentColor"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/app.js"></script>
+    <script>
+      lucide.createIcons();
+      initWhatsAppButton();
+    </script>
+  </body>
+</html>
