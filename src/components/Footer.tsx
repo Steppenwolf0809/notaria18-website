@@ -91,9 +91,7 @@ export function Footer() {
             <h3 className="text-lg font-semibold mb-4">Horarios de Atención</h3>
             <ul className="space-y-2 text-white/80">
               <li>Lunes a Viernes: 08:00 - 17:00</li>
-              <li>Sábado: 09:00 - 12:00</li>
-              <li>Domingo y feriados: Cerrado</li>
-            </ul>
+           </ul>
           </div>
         </div>
 
