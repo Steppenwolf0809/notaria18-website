@@ -1,0 +1,25 @@
+/* PLEASE NOTE: THESE TAILWIND IMPORTS SHOULD NEVER BE DELETED */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+/* DO NOT DELETE THESE TAILWIND IMPORTS, OTHERWISE THE STYLING WILL NOT RENDER AT ALL */
+
+/* Global enhancements */
+html {
+  scroll-behavior: smooth; /* Smooth scroll for internal anchors */
+}
+
+:root {
+  color-scheme: light;
+}
+
+::selection {
+  background: #2a9eb3;
+  color: #ffffff;
+}
+
+/* Accessible focus outline */
+:focus-visible {
+  outline: 2px solid #1e7a8c;
+  outline-offset: 2px;
+}
