@@ -2,4 +2,4 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/notaria18quito/public_html/
-    - /bin/cp -R web/frontend/dist/* $DEPLOYPATH
+    - /bin/cp -R web/frontend/dist/. $DEPLOYPATH
