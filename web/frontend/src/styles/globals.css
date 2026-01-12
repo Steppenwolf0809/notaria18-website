@@ -1,0 +1,195 @@
+@theme {
+  --color-primary-50: #E9F2FC;
+  --color-primary-500: #0E5AA7;
+  --color-primary-600: #0B4E92;
+  --color-primary-700: #0A437E;
+  --color-primary-800: #083A66;
+  --color-accent: #27B3E6;
+  --color-ink: #0F172A;
+  --color-muted: #64748B;
+  --color-surface: #F8FAFC;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base typography and colors */
+:root {
+  color-scheme: light;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--color-surface);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: var(--font-sans);
+}
+
+/* Container helpers */
+.container {
+  max-width: 72rem; /* ~6xl */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Links */
+a {
+  color: var(--color-primary-600);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+a:hover {
+  color: var(--color-primary-700);
+}
+
+/* Cards */
+.card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem; /* rounded-xl */
+  box-shadow: 0 1px 2px rgba(0,0,0,.05);
+}
+
+/* Utilities */
+.bg-hero-gradient {
+  background-image: linear-gradient(180deg,#0E5AA7 0%,#083A66 100%);
+}
+
+/* Prose (basic) */
+.prose h1 { font-size: 1.5rem; font-weight: 600; }
+@media (min-width: 768px) { .prose h1 { font-size: 1.875rem; } }
+.prose p { font-size: 1rem; line-height: 1.75rem; color: var(--color-muted); }
+
+/* Notaría 18 utilities */
+.container-n18 {
+  max-width: 80rem; /* 7xl equivalent */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+@media (min-width: 768px) {
+  .container-n18 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+.card-n18 {
+  border-radius: 1rem;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0,0,0,.05);
+  transition: transform 0.2s ease;
+}
+.card-n18:hover {
+  transform: translateY(-2px);
+}
+.btn-n18 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+.btn-primary {
+  background-color: var(--color-primary-600);
+  color: #fff;
+}
+.btn-primary:hover {
+  background-color: var(--color-primary-700);
+}
+.btn-ghost {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: var(--color-primary-700);
+  border: 1px solid #e5e7eb;
+}
+.btn-ghost:hover {
+  background-color: #fff;
+}
+/* Compact topbar and logo improvements */
+.header-compact .container-n18 { height: 3.25rem; } /* fallback for topbar smaller */
+.header-compact a[aria-label="Inicio"] { display: flex; align-items: center; gap: 0.5rem; }
+.header-compact img { max-width: 36px; max-height: 36px; border-radius: 0.375rem; object-fit: contain; }
+
+/* Small-screen adjustments */
+@media (max-width: 640px) {
+  .header-compact .container-n18 { height: 2.75rem; padding-left: 0.75rem; padding-right: 0.75rem; }
+  .header-compact img { max-width: 28px; max-height: 28px; }
+  .header-compact .brand-text { display: none; } /* hide brand text on very small screens */
+}
+
+/* Hero fine-tuning */
+.hero-bg img { transform-origin: center; will-change: transform; }
+.hero-content { position: relative; z-index: 10; padding-top: 2.5rem; padding-bottom: 2.5rem; }
+@media (min-width: 768px) {
+  .hero-content { padding-top: 5rem; padding-bottom: 6rem; }
+}
+
+/* Slight dark overlay to improve contrast for text on top of images */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(8,58,102,0.72), rgba(8,58,102,0.72));
+  z-index: 5;
+}
+
+/* Service cards: visual polish */
+.card-n18 {
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .12s ease;
+  border: 1px solid rgba(0,0,0,0.04);
+  background-clip: padding-box;
+}
+.card-n18:focus-within,
+.card-n18:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 14px 40px rgba(2,6,23,0.10);
+  border-color: rgba(2,6,23,0.06);
+}
+.card-n18 .p-6 { transition: transform .2s ease; }
+.card-n18:focus-within .p-6,
+.card-n18:hover .p-6 { transform: translateY(-2px); }
+
+/* Image subtle zoom on hover (group utility used) */
+.group-hover\:scale-105 { transform: scale(1.05); }
+
+/* Ensure images inside cards maintain consistent height across grid */
+.card-n18 img { height: 10rem; object-fit: cover; width: 100%; transition: transform .35s cubic-bezier(.2,.9,.2,1); }
+.card-n18 img:hover { transform: scale(1.03); }
+/* Ensure images inside cards maintain consistent height across grid */
+.card-n18 img { height: 10rem; object-fit: cover; width: 100%; }
+
+/* Footer improvements */
+footer { color: var(--color-primary-50); }
+footer h4 { font-size: 1rem; margin-bottom: 0.5rem; }
+footer p, footer a { color: var(--color-primary-50); opacity: 0.95; }
+footer .container-n18 { padding-top: 1.25rem; padding-bottom: 1.25rem; }
+
+/* Reduce very large inline images (e.g., accidental oversized logos) */
+img.img-fluid, img.responsive, .img-fluid { max-width: 100%; height: auto; display: block; }
+
+/* Accessibility: higher contrast focus outlines for keyboard users */
+a:focus, button:focus {
+  outline: 3px solid rgba(39,179,230,0.18);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 4px rgba(39,179,230,0.06);
+}
+
+/* Utility: compact header class to apply in Topbar.jsx */
+.header-compact .nav { gap: 0.75rem; }
+
+/* Small helper for spacing adjustments in pages */
+.page-content-n18 { padding-top: 1.25rem; padding-bottom: 1.25rem; }
