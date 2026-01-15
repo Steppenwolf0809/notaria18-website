@@ -1,0 +1,1 @@
+export const bc = (...pairs) => pairs.map(([name, path]) => ({ name, path }));
