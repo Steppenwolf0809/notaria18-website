@@ -2,4 +2,18 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/notaria18quito/public_html/
+
+    # Notaria Virtual / actos telematicos: servicio retirado.
+    # La pagina se borro del repo, pero el `cp` de abajo COPIA sin SINCRONIZAR,
+    # asi que el archivo sobrevivia en public_html y seguia saliendo en Google.
+    # El .htaccess ademas le pone 410 Gone para acelerar la desindexacion.
+    - test -n "$DEPLOYPATH" && /bin/rm -f "${DEPLOYPATH}notaria-virtual.html"
+
     - /bin/cp -R * $DEPLOYPATH
+    # `*` no expande dotfiles, asi que el .htaccess hay que copiarlo aparte.
+    - /bin/cp .htaccess $DEPLOYPATH
+
+    # El `cp` de arriba publica el repo entero. El codigo fuente y los archivos
+    # de configuracion no deben quedar accesibles desde la web.
+    - test -n "$DEPLOYPATH" && /bin/rm -rf "${DEPLOYPATH}src" "${DEPLOYPATH}backend" "${DEPLOYPATH}web"
+    - test -n "$DEPLOYPATH" && /bin/rm -f "${DEPLOYPATH}package.json" "${DEPLOYPATH}package-lock.json" "${DEPLOYPATH}tsconfig.json" "${DEPLOYPATH}tsconfig.node.json" "${DEPLOYPATH}vite.config.ts" "${DEPLOYPATH}postcss.config.js" "${DEPLOYPATH}tailwind.config.js" "${DEPLOYPATH}README.md" "${DEPLOYPATH}.cpanel.yml"

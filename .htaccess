@@ -1,4 +1,8 @@
 RewriteEngine On
+
+# Redirect legacy registro-personal al nuevo formulario UAFE
+RewriteRule ^registro-personal/?$ https://notaria-segura-v4-production.up.railway.app/formulario-uafe [R=301,L]
+
 # HTTPS
 RewriteCond %{HTTPS} !=on
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
@@ -10,9 +14,26 @@ RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
   </Files>
 </IfModule>
 
+# Redirect formulario UAFE al sistema en Railway (staging)
+RewriteRule ^formulario/?$ https://notaria-segura-v4-production.up.railway.app/formulario-uafe [R=301,L]
+
+# --- Notaria Virtual / actos telematicos: servicio retirado ---
+# La pagina se borro del repo en c2b7c20, pero el archivo sobrevivio en
+# public_html (el despliegue copia, no sincroniza) y Google la seguia
+# indexando. 410 Gone es la senal de desindexacion mas rapida: sin esta
+# regla el catch-all de abajo la serviria con 200 (soft-404).
+ErrorDocument 410 /410.html
+RewriteRule ^notaria-virtual\.html$ - [G,L]
+
+# --- Codigo fuente: no debe ser accesible desde la web ---
+# El despliegue copia el repo entero a public_html, asi que /src, /backend,
+# /web y los archivos de configuracion quedaron publicos. .cpanel.yml los
+# borra tras cada deploy; esto es la segunda linea de defensa.
+RewriteRule ^(src|backend|web)/ - [F,L]
+RewriteRule ^(package(-lock)?\.json|tsconfig(\.node)?\.json|vite\.config\.ts|postcss\.config\.js|tailwind\.config\.js|\.eslintrc\.cjs|\.cpanel\.yml|README\.md)$ - [F,L]
+
 # SPA: todo a index.html excepto /assets y /qr/validate.php
 RewriteCond %{REQUEST_URI} !^/assets/
 RewriteCond %{REQUEST_URI} !^/qr/validate\.php$
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^ index.html [L]
