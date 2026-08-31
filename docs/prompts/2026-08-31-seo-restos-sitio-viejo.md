@@ -27,13 +27,21 @@
 
 ## Qué falta hacer
 
-### 1. Sitemap desalineado
-`public_html/sitemap.xml` (existe sólo en el servidor, no en el repo) le declara a
-Google `/notaria`, `/servicios`, `/tarifas`, `/contacto` — rutas de la SPA que en
-este sitio estático no existen y devuelven el home con 200. Hay que reescribirlo con
-las URLs reales: `/`, `/servicios.html`, `/divorcio.html`,
-`/servicios/compra-venta.html`, `/privacidad.html`, `/terminos.html`.
-Conviene además versionarlo en el repo, para que deje de vivir sólo en el servidor.
+### 1. ~~Sitemap desalineado~~ — HECHO (commit `bb75ac2`)
+`sitemap.xml` y `robots.txt` ya están versionados en el repo y desplegados. El
+sitemap lista las seis URLs reales, cada una verificada con contenido propio.
+Quedaron **fuera a propósito** `verificar.html` y `encuesta-satisfaccion.html`:
+son páginas de utilidad a las que se llega por enlace directo o QR, no por
+búsqueda. Siguen siendo rastreables, sólo no se le proponen a Google.
+
+### 1b. Sin canonical, y el sitio responde igual con y sin `www`
+`https://notaria18quito.com.ec/` devuelve 200 en vez de redirigir a la versión
+`www`, y ninguna página tiene `<link rel="canonical">`. Para Google eso es el
+mismo contenido en dos direcciones distintas, y reparte la autoridad entre las
+dos. La corrección es un 301 de no-www a www en el `.htaccess` más un canonical
+en cada página. **Ojo:** el `.htaccess` ya tiene un `RewriteRule ^ https://...`
+para forzar HTTPS; la regla de www va junto a esa y hay que probar que no se
+encadenen dos redirecciones.
 
 ### 2. Enlaces rotos en el home
 `index.html` enlaza a cuatro páginas que no existen:
