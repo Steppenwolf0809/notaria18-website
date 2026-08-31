@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Solo URLs que existen y devuelven contenido propio.
+  El .htaccess manda cualquier ruta desconocida a index.html con 200, asi que
+  una URL inventada aqui no da 404: le muestra el inicio a Google como si fuera
+  una pagina distinta (soft-404 y contenido duplicado). Antes de agregar una
+  entrada, comprobar que responda con su propio <title>.
+
+  lastmod = fecha del ultimo cambio de contenido segun git, NO la fecha del
+  despliegue: el `cp -R *` reescribe la fecha de todos los archivos y volveria
+  el dato inutil.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://www.notaria18quito.com.ec/</loc>
+    <lastmod>2026-01-15</lastmod>
+  </url>
+  <url>
+    <loc>https://www.notaria18quito.com.ec/servicios.html</loc>
+    <lastmod>2026-01-15</lastmod>
+  </url>
+  <url>
+    <loc>https://www.notaria18quito.com.ec/servicios/compra-venta.html</loc>
+    <lastmod>2026-01-15</lastmod>
+  </url>
+  <url>
+    <loc>https://www.notaria18quito.com.ec/divorcio.html</loc>
+    <lastmod>2026-01-15</lastmod>
+  </url>
+  <url>
+    <loc>https://www.notaria18quito.com.ec/privacidad.html</loc>
+    <lastmod>2025-09-25</lastmod>
+  </url>
+  <url>
+    <loc>https://www.notaria18quito.com.ec/terminos.html</loc>
+    <lastmod>2025-09-25</lastmod>
+  </url>
+</urlset>

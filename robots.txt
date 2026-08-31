@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /qr/verify
+
+Sitemap: https://www.notaria18quito.com.ec/sitemap.xml
