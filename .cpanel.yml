@@ -15,5 +15,5 @@ deployment:
 
     # El `cp` de arriba publica el repo entero. El codigo fuente y los archivos
     # de configuracion no deben quedar accesibles desde la web.
-    - test -n "$DEPLOYPATH" && /bin/rm -rf "${DEPLOYPATH}src" "${DEPLOYPATH}backend" "${DEPLOYPATH}web"
+    - test -n "$DEPLOYPATH" && /bin/rm -rf "${DEPLOYPATH}src" "${DEPLOYPATH}backend" "${DEPLOYPATH}web" "${DEPLOYPATH}docs/prompts"
     - test -n "$DEPLOYPATH" && /bin/rm -f "${DEPLOYPATH}package.json" "${DEPLOYPATH}package-lock.json" "${DEPLOYPATH}tsconfig.json" "${DEPLOYPATH}tsconfig.node.json" "${DEPLOYPATH}vite.config.ts" "${DEPLOYPATH}postcss.config.js" "${DEPLOYPATH}tailwind.config.js" "${DEPLOYPATH}README.md" "${DEPLOYPATH}.cpanel.yml"
