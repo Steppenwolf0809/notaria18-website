@@ -1,7 +1,7 @@
 RewriteEngine On
 
 # Redirect legacy registro-personal al nuevo formulario UAFE
-RewriteRule ^registro-personal/?$ https://notaria-segura-v4-production.up.railway.app/formulario-uafe [R=301,L]
+RewriteRule ^registro-personal/?$ https://app.notalis.ec/formulario-uafe [R=301,L]
 
 # HTTPS
 RewriteCond %{HTTPS} !=on
@@ -14,8 +14,8 @@ RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
   </Files>
 </IfModule>
 
-# Redirect formulario UAFE al sistema en Railway (staging)
-RewriteRule ^formulario/?$ https://notaria-segura-v4-production.up.railway.app/formulario-uafe [R=301,L]
+# Redirect formulario UAFE al sistema (production, app.notalis.ec)
+RewriteRule ^formulario/?$ https://app.notalis.ec/formulario-uafe [R=301,L]
 
 # --- Notaria Virtual / actos telematicos: servicio retirado ---
 # La pagina se borro del repo en c2b7c20, pero el archivo sobrevivio en
